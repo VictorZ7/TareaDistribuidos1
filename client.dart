@@ -1,24 +1,22 @@
 import 'dart:async';
+import 'dart:io';
+import 'dart:convert';
 
-import 'package:grpc/grpc.dart';
+String _host = InternetAddress.loopbackIPv4.host;
+String path = 'file.txt';
 
-import 'package:helloworld/src/generated/helloworld.pb.dart';
-import 'package:helloworld/src/generated/helloworld.pbgrpc.dart';
+Map jsonData = {
+  'name': 'Han Solo',
+  'job': 'reluctant hero',
+  'BFF': 'Chewbacca',
+  'ship': 'Millennium Falcon',
+  'weakness': 'smuggling debts'
+};
 
-Future<Null> main(List<String> args) async {
-  final channel = new ClientChannel('localhost',
-      port: 50051,
-      options: const ChannelOptions(
-          credentials: const ChannelCredentials.insecure()));
-  final stub = new GreeterClient(channel);
-
-  final name = args.isNotEmpty ? args[0] : 'world';
-
-  try {
-    final response = await stub.sayHello(new HelloRequest()..name = name);
-    print('Greeter client received: ${response.message}');
-  } catch (e) {
-    print('Caught error: $e');
-  }
-  await channel.shutdown();
+Future main() async {
+  HttpClientRequest request = await HttpClient().post(_host, 4049, path) /*1*/
+    ..headers.contentType = ContentType.json /*2*/
+    ..write(jsonEncode(jsonData)); /*3*/
+  HttpClientResponse response = await request.close(); /*4*/
+  await response.transform(utf8.decoder /*5*/).forEach(print);
 }
