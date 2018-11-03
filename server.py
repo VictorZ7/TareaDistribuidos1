@@ -17,8 +17,7 @@ print 'Serving HTTP on port %s ...' % PORT
 while True:
     client_connection, client_address = listen_socket.accept()
     request = client_connection.recv(1024)
-    elementos=request.split(" ")
-    print elementos[0],elementos[1],elementos[2]
+    print request
     http_response =str(pistas[0])
     client_connection.sendall(http_response)
     client_connection.close()
