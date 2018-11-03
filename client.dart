@@ -3,7 +3,7 @@ import 'dart:io';
 import 'dart:convert';
 
 String _host = InternetAddress.loopbackIPv4.host;
-String path = 'file.txt';
+String path = 'Hola te llego el memo?';
 
 Map jsonData = {
   'name': 'Han Solo',

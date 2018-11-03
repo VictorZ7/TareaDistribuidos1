@@ -1,9 +1,12 @@
 import socket
+import pistas
+import calculator_pb2
+import calculator_pb2_grpc
+
 
 HOST, PORT = '', 10000
 alturas=set()
-pistas=[1,2,3]
-busy_pistas=[]
+pistas=[1,0,1]
 wait_queue=[]
 ip_airport=dict()
 arrivals=[]
