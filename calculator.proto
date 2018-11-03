@@ -9,11 +9,11 @@ message Response {
     float altura = 2;
     string ip_server = 3;
 }
+
 message None{
 
 }
 
 service Calculator {
-    rpc SquareRoot(None) returns (Response) {}
-    rpc Asigaltura(None) returns (Response) {}
+    rpc ways(None) returns (Response) {}
 }
