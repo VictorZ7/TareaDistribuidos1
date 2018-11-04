@@ -16,5 +16,5 @@ number = calculator_pb2.Number(value=16)
 # make the call
 response = stub.SquareRoot(number)
 
-# et voilà
+# et voila
 print(response.value)
