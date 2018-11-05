@@ -15,6 +15,9 @@
   "author": "John Kariuki",
   "license": "ISC",
   "dependencies": {
-    "grpc": "^1.0.0"
+    "arraylist": "^0.1.0",
+    "full-icu": "^1.2.1",
+    "grpc": "^1.0.0",
+    "readline-sync": "^1.4.9"
   }
 }
