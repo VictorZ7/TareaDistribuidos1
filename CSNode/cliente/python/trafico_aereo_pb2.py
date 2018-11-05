@@ -19,11 +19,73 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='trafico_aereo.proto',
   package='trafico_aereo',
   syntax='proto3',
-  serialized_pb=_b('\n\x13trafico_aereo.proto\x12\rtrafico_aereo\"g\n\x08\x45mployee\x12\x13\n\x0b\x65mployee_id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1a\n\x12\x61\x63\x63rued_leave_days\x18\x03 \x01(\x02\x12\x1c\n\x14requested_leave_days\x18\x04 \x01(\x02\"$\n\x10LeaveEligibility\x12\x10\n\x08\x65ligible\x18\x01 \x01(\x08\"X\n\rLeaveFeedback\x12\x0f\n\x07granted\x18\x01 \x01(\x08\x12\x1a\n\x12\x61\x63\x63rued_leave_days\x18\x02 \x01(\x02\x12\x1a\n\x12granted_leave_days\x18\x03 \x01(\x02\x32\xad\x01\n\x18\x45mployeeLeaveDaysService\x12L\n\x10\x45ligibleForLeave\x12\x17.trafico_aereo.Employee\x1a\x1f.trafico_aereo.LeaveEligibility\x12\x43\n\ngrantLeave\x12\x17.trafico_aereo.Employee\x1a\x1c.trafico_aereo.LeaveFeedbackb\x06proto3')
+  serialized_pb=_b('\n\x13trafico_aereo.proto\x12\rtrafico_aereo\"\x1c\n\x07Request\x12\x11\n\tip_client\x18\x01 \x01(\t\"\x1d\n\x08Response\x12\x11\n\tip_client\x18\x01 \x01(\t\"g\n\x08\x45mployee\x12\x13\n\x0b\x65mployee_id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1a\n\x12\x61\x63\x63rued_leave_days\x18\x03 \x01(\x02\x12\x1c\n\x14requested_leave_days\x18\x04 \x01(\x02\"$\n\x10LeaveEligibility\x12\x10\n\x08\x65ligible\x18\x01 \x01(\x08\"X\n\rLeaveFeedback\x12\x0f\n\x07granted\x18\x01 \x01(\x08\x12\x1a\n\x12\x61\x63\x63rued_leave_days\x18\x02 \x01(\x02\x12\x1a\n\x12granted_leave_days\x18\x03 \x01(\x02\x32\xa4\x01\n\x18\x45mployeeLeaveDaysService\x12\x43\n\x10\x45ligibleForLeave\x12\x16.trafico_aereo.Request\x1a\x17.trafico_aereo.Response\x12\x43\n\ngrantLeave\x12\x17.trafico_aereo.Employee\x1a\x1c.trafico_aereo.LeaveFeedbackb\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
+
+
+_REQUEST = _descriptor.Descriptor(
+  name='Request',
+  full_name='trafico_aereo.Request',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ip_client', full_name='trafico_aereo.Request.ip_client', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=38,
+  serialized_end=66,
+)
+
+
+_RESPONSE = _descriptor.Descriptor(
+  name='Response',
+  full_name='trafico_aereo.Response',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ip_client', full_name='trafico_aereo.Response.ip_client', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=68,
+  serialized_end=97,
+)
 
 
 _EMPLOYEE = _descriptor.Descriptor(
@@ -73,8 +135,8 @@ _EMPLOYEE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=38,
-  serialized_end=141,
+  serialized_start=99,
+  serialized_end=202,
 )
 
 
@@ -104,8 +166,8 @@ _LEAVEELIGIBILITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=143,
-  serialized_end=179,
+  serialized_start=204,
+  serialized_end=240,
 )
 
 
@@ -149,13 +211,29 @@ _LEAVEFEEDBACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=181,
-  serialized_end=269,
+  serialized_start=242,
+  serialized_end=330,
 )
 
+DESCRIPTOR.message_types_by_name['Request'] = _REQUEST
+DESCRIPTOR.message_types_by_name['Response'] = _RESPONSE
 DESCRIPTOR.message_types_by_name['Employee'] = _EMPLOYEE
 DESCRIPTOR.message_types_by_name['LeaveEligibility'] = _LEAVEELIGIBILITY
 DESCRIPTOR.message_types_by_name['LeaveFeedback'] = _LEAVEFEEDBACK
+
+Request = _reflection.GeneratedProtocolMessageType('Request', (_message.Message,), dict(
+  DESCRIPTOR = _REQUEST,
+  __module__ = 'trafico_aereo_pb2'
+  # @@protoc_insertion_point(class_scope:trafico_aereo.Request)
+  ))
+_sym_db.RegisterMessage(Request)
+
+Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Message,), dict(
+  DESCRIPTOR = _RESPONSE,
+  __module__ = 'trafico_aereo_pb2'
+  # @@protoc_insertion_point(class_scope:trafico_aereo.Response)
+  ))
+_sym_db.RegisterMessage(Response)
 
 Employee = _reflection.GeneratedProtocolMessageType('Employee', (_message.Message,), dict(
   DESCRIPTOR = _EMPLOYEE,
@@ -198,8 +276,8 @@ class EmployeeLeaveDaysServiceStub(object):
     """
     self.EligibleForLeave = channel.unary_unary(
         '/trafico_aereo.EmployeeLeaveDaysService/EligibleForLeave',
-        request_serializer=Employee.SerializeToString,
-        response_deserializer=LeaveEligibility.FromString,
+        request_serializer=Request.SerializeToString,
+        response_deserializer=Response.FromString,
         )
     self.grantLeave = channel.unary_unary(
         '/trafico_aereo.EmployeeLeaveDaysService/grantLeave',
@@ -227,8 +305,8 @@ def add_EmployeeLeaveDaysServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'EligibleForLeave': grpc.unary_unary_rpc_method_handler(
           servicer.EligibleForLeave,
-          request_deserializer=Employee.FromString,
-          response_serializer=LeaveEligibility.SerializeToString,
+          request_deserializer=Request.FromString,
+          response_serializer=Response.SerializeToString,
       ),
       'grantLeave': grpc.unary_unary_rpc_method_handler(
           servicer.grantLeave,
@@ -263,11 +341,11 @@ class BetaEmployeeLeaveDaysServiceStub(object):
 
 def beta_create_EmployeeLeaveDaysService_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
   request_deserializers = {
-    ('trafico_aereo.EmployeeLeaveDaysService', 'EligibleForLeave'): Employee.FromString,
+    ('trafico_aereo.EmployeeLeaveDaysService', 'EligibleForLeave'): Request.FromString,
     ('trafico_aereo.EmployeeLeaveDaysService', 'grantLeave'): Employee.FromString,
   }
   response_serializers = {
-    ('trafico_aereo.EmployeeLeaveDaysService', 'EligibleForLeave'): LeaveEligibility.SerializeToString,
+    ('trafico_aereo.EmployeeLeaveDaysService', 'EligibleForLeave'): Response.SerializeToString,
     ('trafico_aereo.EmployeeLeaveDaysService', 'grantLeave'): LeaveFeedback.SerializeToString,
   }
   method_implementations = {
@@ -280,11 +358,11 @@ def beta_create_EmployeeLeaveDaysService_server(servicer, pool=None, pool_size=N
 
 def beta_create_EmployeeLeaveDaysService_stub(channel, host=None, metadata_transformer=None, pool=None, pool_size=None):
   request_serializers = {
-    ('trafico_aereo.EmployeeLeaveDaysService', 'EligibleForLeave'): Employee.SerializeToString,
+    ('trafico_aereo.EmployeeLeaveDaysService', 'EligibleForLeave'): Request.SerializeToString,
     ('trafico_aereo.EmployeeLeaveDaysService', 'grantLeave'): Employee.SerializeToString,
   }
   response_deserializers = {
-    ('trafico_aereo.EmployeeLeaveDaysService', 'EligibleForLeave'): LeaveEligibility.FromString,
+    ('trafico_aereo.EmployeeLeaveDaysService', 'EligibleForLeave'): Response.FromString,
     ('trafico_aereo.EmployeeLeaveDaysService', 'grantLeave'): LeaveFeedback.FromString,
   }
   cardinalities = {

@@ -4,9 +4,6 @@ const proto = grpc.load('proto/trafico_aereo.proto');
 const server = new grpc.Server();
 
 
-
-
-
 //define the callable methods that correspond to the methods defined in the protofile
 server.addProtoService(proto.trafico_aereo.EmployeeLeaveDaysService.service, {
   /**
@@ -15,15 +12,11 @@ server.addProtoService(proto.trafico_aereo.EmployeeLeaveDaysService.service, {
   of accrued days.
   */
   eligibleForLeave(call, callback) {
-    if (call.request.requested_leave_days > 0) {
-      if (call.request.accrued_leave_days > call.request.requested_leave_days) {
-        callback(null, { eligible: true });
-      } else {
-        callback(null, { eligible: false });
-      }
-    } else {
-      callback(new Error('Invalid requested days'));
-    }
+    let ip_client ="ip_client";
+        callback(null, { ip_client});
+      
+   
+    
   },
 
   /**
@@ -67,7 +60,7 @@ var name = readline.question("Cantidad Pistas Despegue?");
 while (i<parseInt(name)){
   pistas_d.push(0);
   i++;
-
+  				
 }
 console.log(pistas_d);
 name3=1;

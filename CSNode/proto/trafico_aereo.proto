@@ -4,8 +4,16 @@ package trafico_aereo; //Optional: unique package name.
 
 //Service. define the methods that the grpc server can expose to the client.
 service EmployeeLeaveDaysService {
-  rpc EligibleForLeave (Employee) returns (LeaveEligibility);
+  rpc EligibleForLeave (Request) returns (Response);
   rpc grantLeave (Employee) returns (LeaveFeedback);
+}
+
+message Request {
+	string ip_client = 1;
+}
+
+message Response {
+	string ip_client = 1;
 }
 
 // Message Type fefinition for an Employee.
