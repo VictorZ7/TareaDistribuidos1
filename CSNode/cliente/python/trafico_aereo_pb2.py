@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='trafico_aereo.proto',
   package='trafico_aereo',
   syntax='proto3',
-  serialized_pb=_b('\n\x13trafico_aereo.proto\x12\rtrafico_aereo\"\x1d\n\x07Request\x12\x12\n\nip_cliente\x18\x01 \x01(\t\"\x1d\n\x08Response\x12\x11\n\tip_server\x18\x01 \x01(\t\"\x17\n\x08\x45mployee\x12\x0b\n\x03pos\x18\x01 \x01(\x05\"\x1c\n\rLeaveFeedback\x12\x0b\n\x03pos\x18\x01 \x01(\x05\x32\x91\x01\n\rServicioAereo\x12;\n\x08\x44\x65spegue\x12\x16.trafico_aereo.Request\x1a\x17.trafico_aereo.Response\x12\x43\n\nAterrizaje\x12\x17.trafico_aereo.Employee\x1a\x1c.trafico_aereo.LeaveFeedbackb\x06proto3')
+  serialized_pb=_b('\n\x13trafico_aereo.proto\x12\rtrafico_aereo\"\x1d\n\x07Request\x12\x12\n\nip_cliente\x18\x01 \x01(\t\"\x1d\n\x08Response\x12\x11\n\tip_server\x18\x01 \x01(\t\" \n\x11Request_Aterrizar\x12\x0b\n\x03pos\x18\x01 \x01(\x05\"5\n\x12Response_Aterrizar\x12\x0b\n\x03pos\x18\x01 \x01(\x05\x12\x12\n\nip_cliente\x18\x02 \x01(\t\"!\n\x10Request_Despegar\x12\r\n\x05pos_d\x18\x01 \x01(\x05\"\"\n\x11Response_Despegar\x12\r\n\x05pos_d\x18\x01 \x01(\x05\x32\xe8\x01\n\rServicioAereo\x12\x35\n\x02IP\x12\x16.trafico_aereo.Request\x1a\x17.trafico_aereo.Response\x12Q\n\nAterrizaje\x12 .trafico_aereo.Request_Aterrizar\x1a!.trafico_aereo.Response_Aterrizar\x12M\n\x08\x44\x65spegue\x12\x1f.trafico_aereo.Request_Despegar\x1a .trafico_aereo.Response_Despegarb\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -88,15 +88,15 @@ _RESPONSE = _descriptor.Descriptor(
 )
 
 
-_EMPLOYEE = _descriptor.Descriptor(
-  name='Employee',
-  full_name='trafico_aereo.Employee',
+_REQUEST_ATERRIZAR = _descriptor.Descriptor(
+  name='Request_Aterrizar',
+  full_name='trafico_aereo.Request_Aterrizar',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pos', full_name='trafico_aereo.Employee.pos', index=0,
+      name='pos', full_name='trafico_aereo.Request_Aterrizar.pos', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -115,19 +115,57 @@ _EMPLOYEE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=100,
-  serialized_end=123,
+  serialized_end=132,
 )
 
 
-_LEAVEFEEDBACK = _descriptor.Descriptor(
-  name='LeaveFeedback',
-  full_name='trafico_aereo.LeaveFeedback',
+_RESPONSE_ATERRIZAR = _descriptor.Descriptor(
+  name='Response_Aterrizar',
+  full_name='trafico_aereo.Response_Aterrizar',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pos', full_name='trafico_aereo.LeaveFeedback.pos', index=0,
+      name='pos', full_name='trafico_aereo.Response_Aterrizar.pos', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ip_cliente', full_name='trafico_aereo.Response_Aterrizar.ip_cliente', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=134,
+  serialized_end=187,
+)
+
+
+_REQUEST_DESPEGAR = _descriptor.Descriptor(
+  name='Request_Despegar',
+  full_name='trafico_aereo.Request_Despegar',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pos_d', full_name='trafico_aereo.Request_Despegar.pos_d', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -145,14 +183,47 @@ _LEAVEFEEDBACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=125,
-  serialized_end=153,
+  serialized_start=189,
+  serialized_end=222,
+)
+
+
+_RESPONSE_DESPEGAR = _descriptor.Descriptor(
+  name='Response_Despegar',
+  full_name='trafico_aereo.Response_Despegar',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pos_d', full_name='trafico_aereo.Response_Despegar.pos_d', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=224,
+  serialized_end=258,
 )
 
 DESCRIPTOR.message_types_by_name['Request'] = _REQUEST
 DESCRIPTOR.message_types_by_name['Response'] = _RESPONSE
-DESCRIPTOR.message_types_by_name['Employee'] = _EMPLOYEE
-DESCRIPTOR.message_types_by_name['LeaveFeedback'] = _LEAVEFEEDBACK
+DESCRIPTOR.message_types_by_name['Request_Aterrizar'] = _REQUEST_ATERRIZAR
+DESCRIPTOR.message_types_by_name['Response_Aterrizar'] = _RESPONSE_ATERRIZAR
+DESCRIPTOR.message_types_by_name['Request_Despegar'] = _REQUEST_DESPEGAR
+DESCRIPTOR.message_types_by_name['Response_Despegar'] = _RESPONSE_DESPEGAR
 
 Request = _reflection.GeneratedProtocolMessageType('Request', (_message.Message,), dict(
   DESCRIPTOR = _REQUEST,
@@ -168,19 +239,33 @@ Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Messag
   ))
 _sym_db.RegisterMessage(Response)
 
-Employee = _reflection.GeneratedProtocolMessageType('Employee', (_message.Message,), dict(
-  DESCRIPTOR = _EMPLOYEE,
+Request_Aterrizar = _reflection.GeneratedProtocolMessageType('Request_Aterrizar', (_message.Message,), dict(
+  DESCRIPTOR = _REQUEST_ATERRIZAR,
   __module__ = 'trafico_aereo_pb2'
-  # @@protoc_insertion_point(class_scope:trafico_aereo.Employee)
+  # @@protoc_insertion_point(class_scope:trafico_aereo.Request_Aterrizar)
   ))
-_sym_db.RegisterMessage(Employee)
+_sym_db.RegisterMessage(Request_Aterrizar)
 
-LeaveFeedback = _reflection.GeneratedProtocolMessageType('LeaveFeedback', (_message.Message,), dict(
-  DESCRIPTOR = _LEAVEFEEDBACK,
+Response_Aterrizar = _reflection.GeneratedProtocolMessageType('Response_Aterrizar', (_message.Message,), dict(
+  DESCRIPTOR = _RESPONSE_ATERRIZAR,
   __module__ = 'trafico_aereo_pb2'
-  # @@protoc_insertion_point(class_scope:trafico_aereo.LeaveFeedback)
+  # @@protoc_insertion_point(class_scope:trafico_aereo.Response_Aterrizar)
   ))
-_sym_db.RegisterMessage(LeaveFeedback)
+_sym_db.RegisterMessage(Response_Aterrizar)
+
+Request_Despegar = _reflection.GeneratedProtocolMessageType('Request_Despegar', (_message.Message,), dict(
+  DESCRIPTOR = _REQUEST_DESPEGAR,
+  __module__ = 'trafico_aereo_pb2'
+  # @@protoc_insertion_point(class_scope:trafico_aereo.Request_Despegar)
+  ))
+_sym_db.RegisterMessage(Request_Despegar)
+
+Response_Despegar = _reflection.GeneratedProtocolMessageType('Response_Despegar', (_message.Message,), dict(
+  DESCRIPTOR = _RESPONSE_DESPEGAR,
+  __module__ = 'trafico_aereo_pb2'
+  # @@protoc_insertion_point(class_scope:trafico_aereo.Response_Despegar)
+  ))
+_sym_db.RegisterMessage(Response_Despegar)
 
 
 import grpc
@@ -200,15 +285,20 @@ class ServicioAereoStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.Despegue = channel.unary_unary(
-        '/trafico_aereo.ServicioAereo/Despegue',
+    self.IP = channel.unary_unary(
+        '/trafico_aereo.ServicioAereo/IP',
         request_serializer=Request.SerializeToString,
         response_deserializer=Response.FromString,
         )
     self.Aterrizaje = channel.unary_unary(
         '/trafico_aereo.ServicioAereo/Aterrizaje',
-        request_serializer=Employee.SerializeToString,
-        response_deserializer=LeaveFeedback.FromString,
+        request_serializer=Request_Aterrizar.SerializeToString,
+        response_deserializer=Response_Aterrizar.FromString,
+        )
+    self.Despegue = channel.unary_unary(
+        '/trafico_aereo.ServicioAereo/Despegue',
+        request_serializer=Request_Despegar.SerializeToString,
+        response_deserializer=Response_Despegar.FromString,
         )
 
 
@@ -216,7 +306,7 @@ class ServicioAereoServicer(object):
   """Service. define the methods that the grpc server can expose to the client.
   """
 
-  def Despegue(self, request, context):
+  def IP(self, request, context):
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
@@ -226,18 +316,28 @@ class ServicioAereoServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def Despegue(self, request, context):
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_ServicioAereoServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'Despegue': grpc.unary_unary_rpc_method_handler(
-          servicer.Despegue,
+      'IP': grpc.unary_unary_rpc_method_handler(
+          servicer.IP,
           request_deserializer=Request.FromString,
           response_serializer=Response.SerializeToString,
       ),
       'Aterrizaje': grpc.unary_unary_rpc_method_handler(
           servicer.Aterrizaje,
-          request_deserializer=Employee.FromString,
-          response_serializer=LeaveFeedback.SerializeToString,
+          request_deserializer=Request_Aterrizar.FromString,
+          response_serializer=Response_Aterrizar.SerializeToString,
+      ),
+      'Despegue': grpc.unary_unary_rpc_method_handler(
+          servicer.Despegue,
+          request_deserializer=Request_Despegar.FromString,
+          response_serializer=Response_Despegar.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
@@ -248,35 +348,43 @@ def add_ServicioAereoServicer_to_server(servicer, server):
 class BetaServicioAereoServicer(object):
   """Service. define the methods that the grpc server can expose to the client.
   """
-  def Despegue(self, request, context):
+  def IP(self, request, context):
     context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
   def Aterrizaje(self, request, context):
+    context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+  def Despegue(self, request, context):
     context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
 
 
 class BetaServicioAereoStub(object):
   """Service. define the methods that the grpc server can expose to the client.
   """
-  def Despegue(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+  def IP(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
     raise NotImplementedError()
-  Despegue.future = None
+  IP.future = None
   def Aterrizaje(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
     raise NotImplementedError()
   Aterrizaje.future = None
+  def Despegue(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+    raise NotImplementedError()
+  Despegue.future = None
 
 
 def beta_create_ServicioAereo_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
   request_deserializers = {
-    ('trafico_aereo.ServicioAereo', 'Aterrizaje'): Employee.FromString,
-    ('trafico_aereo.ServicioAereo', 'Despegue'): Request.FromString,
+    ('trafico_aereo.ServicioAereo', 'Aterrizaje'): Request_Aterrizar.FromString,
+    ('trafico_aereo.ServicioAereo', 'Despegue'): Request_Despegar.FromString,
+    ('trafico_aereo.ServicioAereo', 'IP'): Request.FromString,
   }
   response_serializers = {
-    ('trafico_aereo.ServicioAereo', 'Aterrizaje'): LeaveFeedback.SerializeToString,
-    ('trafico_aereo.ServicioAereo', 'Despegue'): Response.SerializeToString,
+    ('trafico_aereo.ServicioAereo', 'Aterrizaje'): Response_Aterrizar.SerializeToString,
+    ('trafico_aereo.ServicioAereo', 'Despegue'): Response_Despegar.SerializeToString,
+    ('trafico_aereo.ServicioAereo', 'IP'): Response.SerializeToString,
   }
   method_implementations = {
     ('trafico_aereo.ServicioAereo', 'Aterrizaje'): face_utilities.unary_unary_inline(servicer.Aterrizaje),
     ('trafico_aereo.ServicioAereo', 'Despegue'): face_utilities.unary_unary_inline(servicer.Despegue),
+    ('trafico_aereo.ServicioAereo', 'IP'): face_utilities.unary_unary_inline(servicer.IP),
   }
   server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
   return beta_implementations.server(method_implementations, options=server_options)
@@ -284,16 +392,19 @@ def beta_create_ServicioAereo_server(servicer, pool=None, pool_size=None, defaul
 
 def beta_create_ServicioAereo_stub(channel, host=None, metadata_transformer=None, pool=None, pool_size=None):
   request_serializers = {
-    ('trafico_aereo.ServicioAereo', 'Aterrizaje'): Employee.SerializeToString,
-    ('trafico_aereo.ServicioAereo', 'Despegue'): Request.SerializeToString,
+    ('trafico_aereo.ServicioAereo', 'Aterrizaje'): Request_Aterrizar.SerializeToString,
+    ('trafico_aereo.ServicioAereo', 'Despegue'): Request_Despegar.SerializeToString,
+    ('trafico_aereo.ServicioAereo', 'IP'): Request.SerializeToString,
   }
   response_deserializers = {
-    ('trafico_aereo.ServicioAereo', 'Aterrizaje'): LeaveFeedback.FromString,
-    ('trafico_aereo.ServicioAereo', 'Despegue'): Response.FromString,
+    ('trafico_aereo.ServicioAereo', 'Aterrizaje'): Response_Aterrizar.FromString,
+    ('trafico_aereo.ServicioAereo', 'Despegue'): Response_Despegar.FromString,
+    ('trafico_aereo.ServicioAereo', 'IP'): Response.FromString,
   }
   cardinalities = {
     'Aterrizaje': cardinality.Cardinality.UNARY_UNARY,
     'Despegue': cardinality.Cardinality.UNARY_UNARY,
+    'IP': cardinality.Cardinality.UNARY_UNARY,
   }
   stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)
   return beta_implementations.dynamic_stub(channel, 'trafico_aereo.ServicioAereo', cardinalities, options=stub_options)
