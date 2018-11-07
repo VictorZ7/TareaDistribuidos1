@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='trafico_aereo.proto',
   package='trafico_aereo',
   syntax='proto3',
-  serialized_pb=_b('\n\x13trafico_aereo.proto\x12\rtrafico_aereo\"\x1d\n\x07Request\x12\x12\n\nip_cliente\x18\x01 \x01(\t\"\x1d\n\x08Response\x12\x11\n\tip_server\x18\x01 \x01(\t\"+\n\x0er_estado_avion\x12\x0c\n\x04\x66uel\x18\x01 \x01(\x05\x12\x0b\n\x03psj\x18\x02 \x01(\x05\" \n\x11Request_Aterrizar\x12\x0b\n\x03pos\x18\x01 \x01(\x05\")\n\x0c\x65stado_avion\x12\x0c\n\x04\x66uel\x18\x01 \x01(\x05\x12\x0b\n\x03psj\x18\x02 \x01(\x05\"5\n\x12Response_Aterrizar\x12\x0b\n\x03pos\x18\x01 \x01(\x05\x12\x12\n\nip_cliente\x18\x02 \x01(\t\"!\n\x10Request_Despegar\x12\r\n\x05pos_d\x18\x01 \x01(\x05\"\"\n\x11Response_Despegar\x12\r\n\x05pos_d\x18\x01 \x01(\x05\x32\xb1\x02\n\rServicioAereo\x12\x35\n\x02IP\x12\x16.trafico_aereo.Request\x1a\x17.trafico_aereo.Response\x12Q\n\nAterrizaje\x12 .trafico_aereo.Request_Aterrizar\x1a!.trafico_aereo.Response_Aterrizar\x12M\n\x08\x44\x65spegue\x12\x1f.trafico_aereo.Request_Despegar\x1a .trafico_aereo.Response_Despegar\x12G\n\tDejar_air\x12\x1d.trafico_aereo.r_estado_avion\x1a\x1b.trafico_aereo.estado_avionb\x06proto3')
+  serialized_pb=_b('\n\x13trafico_aereo.proto\x12\rtrafico_aereo\"\x1d\n\x07Request\x12\x12\n\nip_cliente\x18\x01 \x01(\t\"\x1d\n\x08Response\x12\x11\n\tip_server\x18\x01 \x01(\t\" \n\x11Request_Aterrizar\x12\x0b\n\x03pos\x18\x01 \x01(\x05\"8\n\x0er_estado_avion\x12\x0c\n\x04\x66uel\x18\x01 \x01(\x05\x12\x0b\n\x03psj\x18\x02 \x01(\x05\x12\x0b\n\x03ipa\x18\x03 \x01(\t\"6\n\x0c\x65stado_avion\x12\x0c\n\x04\x66uel\x18\x01 \x01(\x05\x12\x0b\n\x03psj\x18\x02 \x01(\x05\x12\x0b\n\x03ipa\x18\x03 \x01(\t\"5\n\x12Response_Aterrizar\x12\x0b\n\x03pos\x18\x01 \x01(\x05\x12\x12\n\nip_cliente\x18\x02 \x01(\t\"!\n\x10Request_Despegar\x12\r\n\x05pos_d\x18\x01 \x01(\x05\"\"\n\x11Response_Despegar\x12\r\n\x05pos_d\x18\x01 \x01(\x05\x32\xb1\x02\n\rServicioAereo\x12\x35\n\x02IP\x12\x16.trafico_aereo.Request\x1a\x17.trafico_aereo.Response\x12Q\n\nAterrizaje\x12 .trafico_aereo.Request_Aterrizar\x1a!.trafico_aereo.Response_Aterrizar\x12M\n\x08\x44\x65spegue\x12\x1f.trafico_aereo.Request_Despegar\x1a .trafico_aereo.Response_Despegar\x12G\n\tDejar_air\x12\x1d.trafico_aereo.r_estado_avion\x1a\x1b.trafico_aereo.estado_avionb\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -88,44 +88,6 @@ _RESPONSE = _descriptor.Descriptor(
 )
 
 
-_R_ESTADO_AVION = _descriptor.Descriptor(
-  name='r_estado_avion',
-  full_name='trafico_aereo.r_estado_avion',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='fuel', full_name='trafico_aereo.r_estado_avion.fuel', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='psj', full_name='trafico_aereo.r_estado_avion.psj', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=100,
-  serialized_end=143,
-)
-
-
 _REQUEST_ATERRIZAR = _descriptor.Descriptor(
   name='Request_Aterrizar',
   full_name='trafico_aereo.Request_Aterrizar',
@@ -152,8 +114,53 @@ _REQUEST_ATERRIZAR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=145,
-  serialized_end=177,
+  serialized_start=100,
+  serialized_end=132,
+)
+
+
+_R_ESTADO_AVION = _descriptor.Descriptor(
+  name='r_estado_avion',
+  full_name='trafico_aereo.r_estado_avion',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='fuel', full_name='trafico_aereo.r_estado_avion.fuel', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='psj', full_name='trafico_aereo.r_estado_avion.psj', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ipa', full_name='trafico_aereo.r_estado_avion.ipa', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=134,
+  serialized_end=190,
 )
 
 
@@ -178,6 +185,13 @@ _ESTADO_AVION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='ipa', full_name='trafico_aereo.estado_avion.ipa', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -190,8 +204,8 @@ _ESTADO_AVION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=179,
-  serialized_end=220,
+  serialized_start=192,
+  serialized_end=246,
 )
 
 
@@ -228,8 +242,8 @@ _RESPONSE_ATERRIZAR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=222,
-  serialized_end=275,
+  serialized_start=248,
+  serialized_end=301,
 )
 
 
@@ -259,8 +273,8 @@ _REQUEST_DESPEGAR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=277,
-  serialized_end=310,
+  serialized_start=303,
+  serialized_end=336,
 )
 
 
@@ -290,14 +304,14 @@ _RESPONSE_DESPEGAR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=312,
-  serialized_end=346,
+  serialized_start=338,
+  serialized_end=372,
 )
 
 DESCRIPTOR.message_types_by_name['Request'] = _REQUEST
 DESCRIPTOR.message_types_by_name['Response'] = _RESPONSE
-DESCRIPTOR.message_types_by_name['r_estado_avion'] = _R_ESTADO_AVION
 DESCRIPTOR.message_types_by_name['Request_Aterrizar'] = _REQUEST_ATERRIZAR
+DESCRIPTOR.message_types_by_name['r_estado_avion'] = _R_ESTADO_AVION
 DESCRIPTOR.message_types_by_name['estado_avion'] = _ESTADO_AVION
 DESCRIPTOR.message_types_by_name['Response_Aterrizar'] = _RESPONSE_ATERRIZAR
 DESCRIPTOR.message_types_by_name['Request_Despegar'] = _REQUEST_DESPEGAR
@@ -317,19 +331,19 @@ Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Messag
   ))
 _sym_db.RegisterMessage(Response)
 
-r_estado_avion = _reflection.GeneratedProtocolMessageType('r_estado_avion', (_message.Message,), dict(
-  DESCRIPTOR = _R_ESTADO_AVION,
-  __module__ = 'trafico_aereo_pb2'
-  # @@protoc_insertion_point(class_scope:trafico_aereo.r_estado_avion)
-  ))
-_sym_db.RegisterMessage(r_estado_avion)
-
 Request_Aterrizar = _reflection.GeneratedProtocolMessageType('Request_Aterrizar', (_message.Message,), dict(
   DESCRIPTOR = _REQUEST_ATERRIZAR,
   __module__ = 'trafico_aereo_pb2'
   # @@protoc_insertion_point(class_scope:trafico_aereo.Request_Aterrizar)
   ))
 _sym_db.RegisterMessage(Request_Aterrizar)
+
+r_estado_avion = _reflection.GeneratedProtocolMessageType('r_estado_avion', (_message.Message,), dict(
+  DESCRIPTOR = _R_ESTADO_AVION,
+  __module__ = 'trafico_aereo_pb2'
+  # @@protoc_insertion_point(class_scope:trafico_aereo.r_estado_avion)
+  ))
+_sym_db.RegisterMessage(r_estado_avion)
 
 estado_avion = _reflection.GeneratedProtocolMessageType('estado_avion', (_message.Message,), dict(
   DESCRIPTOR = _ESTADO_AVION,
