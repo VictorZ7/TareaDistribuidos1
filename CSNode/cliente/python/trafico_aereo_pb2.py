@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='trafico_aereo.proto',
   package='trafico_aereo',
   syntax='proto3',
-  serialized_pb=_b('\n\x13trafico_aereo.proto\x12\rtrafico_aereo\"\x1d\n\x07Request\x12\x12\n\nip_cliente\x18\x01 \x01(\t\"\x1d\n\x08Response\x12\x11\n\tip_server\x18\x01 \x01(\t\" \n\x11Request_Aterrizar\x12\x0b\n\x03pos\x18\x01 \x01(\x05\"5\n\x12Response_Aterrizar\x12\x0b\n\x03pos\x18\x01 \x01(\x05\x12\x12\n\nip_cliente\x18\x02 \x01(\t\"!\n\x10Request_Despegar\x12\r\n\x05pos_d\x18\x01 \x01(\x05\"\"\n\x11Response_Despegar\x12\r\n\x05pos_d\x18\x01 \x01(\x05\x32\xe8\x01\n\rServicioAereo\x12\x35\n\x02IP\x12\x16.trafico_aereo.Request\x1a\x17.trafico_aereo.Response\x12Q\n\nAterrizaje\x12 .trafico_aereo.Request_Aterrizar\x1a!.trafico_aereo.Response_Aterrizar\x12M\n\x08\x44\x65spegue\x12\x1f.trafico_aereo.Request_Despegar\x1a .trafico_aereo.Response_Despegarb\x06proto3')
+  serialized_pb=_b('\n\x13trafico_aereo.proto\x12\rtrafico_aereo\"\x1d\n\x07Request\x12\x12\n\nip_cliente\x18\x01 \x01(\t\"\x1d\n\x08Response\x12\x11\n\tip_server\x18\x01 \x01(\t\" \n\x11Request_Aterrizar\x12\x0b\n\x03pos\x18\x01 \x01(\x05\")\n\x0c\x65stado_avion\x12\x0c\n\x04\x66uel\x18\x01 \x01(\x05\x12\x0b\n\x03psj\x18\x02 \x01(\x05\"5\n\x12Response_Aterrizar\x12\x0b\n\x03pos\x18\x01 \x01(\x05\x12\x12\n\nip_cliente\x18\x02 \x01(\t\"!\n\x10Request_Despegar\x12\r\n\x05pos_d\x18\x01 \x01(\x05\"\"\n\x11Response_Despegar\x12\r\n\x05pos_d\x18\x01 \x01(\x05\x32\xb0\x02\n\rServicioAereo\x12\x35\n\x02IP\x12\x16.trafico_aereo.Request\x1a\x17.trafico_aereo.Response\x12Q\n\nAterrizaje\x12 .trafico_aereo.Request_Aterrizar\x1a!.trafico_aereo.Response_Aterrizar\x12M\n\x08\x44\x65spegue\x12\x1f.trafico_aereo.Request_Despegar\x1a .trafico_aereo.Response_Despegar\x12\x46\n\tDejar_air\x12\x16.trafico_aereo.Request\x1a!.trafico_aereo.Response_Aterrizarb\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -119,6 +119,44 @@ _REQUEST_ATERRIZAR = _descriptor.Descriptor(
 )
 
 
+_ESTADO_AVION = _descriptor.Descriptor(
+  name='estado_avion',
+  full_name='trafico_aereo.estado_avion',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='fuel', full_name='trafico_aereo.estado_avion.fuel', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='psj', full_name='trafico_aereo.estado_avion.psj', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=134,
+  serialized_end=175,
+)
+
+
 _RESPONSE_ATERRIZAR = _descriptor.Descriptor(
   name='Response_Aterrizar',
   full_name='trafico_aereo.Response_Aterrizar',
@@ -152,8 +190,8 @@ _RESPONSE_ATERRIZAR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=134,
-  serialized_end=187,
+  serialized_start=177,
+  serialized_end=230,
 )
 
 
@@ -183,8 +221,8 @@ _REQUEST_DESPEGAR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=189,
-  serialized_end=222,
+  serialized_start=232,
+  serialized_end=265,
 )
 
 
@@ -214,13 +252,14 @@ _RESPONSE_DESPEGAR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=224,
-  serialized_end=258,
+  serialized_start=267,
+  serialized_end=301,
 )
 
 DESCRIPTOR.message_types_by_name['Request'] = _REQUEST
 DESCRIPTOR.message_types_by_name['Response'] = _RESPONSE
 DESCRIPTOR.message_types_by_name['Request_Aterrizar'] = _REQUEST_ATERRIZAR
+DESCRIPTOR.message_types_by_name['estado_avion'] = _ESTADO_AVION
 DESCRIPTOR.message_types_by_name['Response_Aterrizar'] = _RESPONSE_ATERRIZAR
 DESCRIPTOR.message_types_by_name['Request_Despegar'] = _REQUEST_DESPEGAR
 DESCRIPTOR.message_types_by_name['Response_Despegar'] = _RESPONSE_DESPEGAR
@@ -245,6 +284,13 @@ Request_Aterrizar = _reflection.GeneratedProtocolMessageType('Request_Aterrizar'
   # @@protoc_insertion_point(class_scope:trafico_aereo.Request_Aterrizar)
   ))
 _sym_db.RegisterMessage(Request_Aterrizar)
+
+estado_avion = _reflection.GeneratedProtocolMessageType('estado_avion', (_message.Message,), dict(
+  DESCRIPTOR = _ESTADO_AVION,
+  __module__ = 'trafico_aereo_pb2'
+  # @@protoc_insertion_point(class_scope:trafico_aereo.estado_avion)
+  ))
+_sym_db.RegisterMessage(estado_avion)
 
 Response_Aterrizar = _reflection.GeneratedProtocolMessageType('Response_Aterrizar', (_message.Message,), dict(
   DESCRIPTOR = _RESPONSE_ATERRIZAR,
@@ -300,6 +346,11 @@ class ServicioAereoStub(object):
         request_serializer=Request_Despegar.SerializeToString,
         response_deserializer=Response_Despegar.FromString,
         )
+    self.Dejar_air = channel.unary_unary(
+        '/trafico_aereo.ServicioAereo/Dejar_air',
+        request_serializer=Request.SerializeToString,
+        response_deserializer=Response_Aterrizar.FromString,
+        )
 
 
 class ServicioAereoServicer(object):
@@ -317,6 +368,11 @@ class ServicioAereoServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def Despegue(self, request, context):
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Dejar_air(self, request, context):
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
@@ -339,6 +395,11 @@ def add_ServicioAereoServicer_to_server(servicer, server):
           request_deserializer=Request_Despegar.FromString,
           response_serializer=Response_Despegar.SerializeToString,
       ),
+      'Dejar_air': grpc.unary_unary_rpc_method_handler(
+          servicer.Dejar_air,
+          request_deserializer=Request.FromString,
+          response_serializer=Response_Aterrizar.SerializeToString,
+      ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
       'trafico_aereo.ServicioAereo', rpc_method_handlers)
@@ -354,6 +415,8 @@ class BetaServicioAereoServicer(object):
     context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
   def Despegue(self, request, context):
     context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+  def Dejar_air(self, request, context):
+    context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
 
 
 class BetaServicioAereoStub(object):
@@ -368,21 +431,27 @@ class BetaServicioAereoStub(object):
   def Despegue(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
     raise NotImplementedError()
   Despegue.future = None
+  def Dejar_air(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+    raise NotImplementedError()
+  Dejar_air.future = None
 
 
 def beta_create_ServicioAereo_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
   request_deserializers = {
     ('trafico_aereo.ServicioAereo', 'Aterrizaje'): Request_Aterrizar.FromString,
+    ('trafico_aereo.ServicioAereo', 'Dejar_air'): Request.FromString,
     ('trafico_aereo.ServicioAereo', 'Despegue'): Request_Despegar.FromString,
     ('trafico_aereo.ServicioAereo', 'IP'): Request.FromString,
   }
   response_serializers = {
     ('trafico_aereo.ServicioAereo', 'Aterrizaje'): Response_Aterrizar.SerializeToString,
+    ('trafico_aereo.ServicioAereo', 'Dejar_air'): Response_Aterrizar.SerializeToString,
     ('trafico_aereo.ServicioAereo', 'Despegue'): Response_Despegar.SerializeToString,
     ('trafico_aereo.ServicioAereo', 'IP'): Response.SerializeToString,
   }
   method_implementations = {
     ('trafico_aereo.ServicioAereo', 'Aterrizaje'): face_utilities.unary_unary_inline(servicer.Aterrizaje),
+    ('trafico_aereo.ServicioAereo', 'Dejar_air'): face_utilities.unary_unary_inline(servicer.Dejar_air),
     ('trafico_aereo.ServicioAereo', 'Despegue'): face_utilities.unary_unary_inline(servicer.Despegue),
     ('trafico_aereo.ServicioAereo', 'IP'): face_utilities.unary_unary_inline(servicer.IP),
   }
@@ -393,16 +462,19 @@ def beta_create_ServicioAereo_server(servicer, pool=None, pool_size=None, defaul
 def beta_create_ServicioAereo_stub(channel, host=None, metadata_transformer=None, pool=None, pool_size=None):
   request_serializers = {
     ('trafico_aereo.ServicioAereo', 'Aterrizaje'): Request_Aterrizar.SerializeToString,
+    ('trafico_aereo.ServicioAereo', 'Dejar_air'): Request.SerializeToString,
     ('trafico_aereo.ServicioAereo', 'Despegue'): Request_Despegar.SerializeToString,
     ('trafico_aereo.ServicioAereo', 'IP'): Request.SerializeToString,
   }
   response_deserializers = {
     ('trafico_aereo.ServicioAereo', 'Aterrizaje'): Response_Aterrizar.FromString,
+    ('trafico_aereo.ServicioAereo', 'Dejar_air'): Response_Aterrizar.FromString,
     ('trafico_aereo.ServicioAereo', 'Despegue'): Response_Despegar.FromString,
     ('trafico_aereo.ServicioAereo', 'IP'): Response.FromString,
   }
   cardinalities = {
     'Aterrizaje': cardinality.Cardinality.UNARY_UNARY,
+    'Dejar_air': cardinality.Cardinality.UNARY_UNARY,
     'Despegue': cardinality.Cardinality.UNARY_UNARY,
     'IP': cardinality.Cardinality.UNARY_UNARY,
   }

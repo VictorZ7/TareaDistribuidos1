@@ -66,6 +66,8 @@ server.addProtoService(proto.trafico_aereo.ServicioAereo.service, {
 
   },
 
+
+
   /**
   Grant an employee leave days
   */
@@ -120,8 +122,17 @@ server.addProtoService(proto.trafico_aereo.ServicioAereo.service, {
 
         callback(null, {pos_d});
         console.log(pos_d);
-        }
+      },
+
+    Dejar_air(call, callback) {
+          estado = call.estado_avion;
+          console.log(estado.psj);
+          console.log(estado.fuel);
+        },
+
 });
+
+
 
 /**var prop = rl.createInterface(process.stdin, process.stdout);
 

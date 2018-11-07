@@ -7,6 +7,7 @@ service ServicioAereo {
   rpc IP (Request) returns (Response);
   rpc Aterrizaje (Request_Aterrizar) returns (Response_Aterrizar);
   rpc Despegue (Request_Despegar) returns (Response_Despegar);
+  rpc Dejar_air (Request) returns (Response_Aterrizar);
 }
 
 message Request {
@@ -19,6 +20,11 @@ message Response {
 
 message Request_Aterrizar {
   int32 pos = 1;
+}
+
+message estado_avion{
+  int32 fuel=1;
+  int32 psj=2;
 }
 
 message Response_Aterrizar  {

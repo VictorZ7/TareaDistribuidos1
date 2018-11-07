@@ -6,6 +6,8 @@ def main():
 
     id=raw_input("Ingrese IP del Avion:")
     torre=raw_input("Ingrese Destino:")
+    pasajeros=1000
+    comb=100
     # Create channel and stub to server's address and port.
     channel = grpc.insecure_channel('localhost:'+torre)
     stub = pb.ServicioAereoStub(channel)
@@ -40,11 +42,20 @@ def main():
             response3 = stub.Despegue(pb.Request_Despegar())
         print("Puede despegar en pista"+str(response3.pos_d+1))
         time.sleep(3)
-        
+
 
     # Catch any raised errors by grpc.
     except grpc.RpcError as e:
         print("Error raised: " + e.details())
+    try:
+            response4 = stub.Dejar_air(pb.estado_avion(fuel=comb,psj=pasajeros))
+            print("Puede despegar en pista"+str(response3.pos_d+1))
+            time.sleep(3)
+
+
+        # Catch any raised errors by grpc.
+    except grpc.RpcError as e:
+            print("Error raised: " + e.details())
 
 if __name__ == '__main__':
     main()
