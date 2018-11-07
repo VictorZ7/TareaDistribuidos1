@@ -125,9 +125,27 @@ server.addProtoService(proto.trafico_aereo.ServicioAereo.service, {
       },
 
     Dejar_air(call, callback) {
-          estado = call.estado_avion;
-          console.log(estado.psj);
-          console.log(estado.fuel);
+          estado = call.request;
+          if ((estado.psj>=300 || estado.psj<=524) && (estado.fuel<245 || estado.fuel>190)){
+            console.log("Avion saliendo de la pista de aterrizaje");
+            console.log(estado.ip_a);
+            pistas_d.splice(asignaciones_d[estado.ip_a],1,0);
+
+          }
+          else{
+            console.log("Debe cargar combustible o esperar más pasajeros");
+            while(estado.psj<300){
+              estado.psj++;
+              console.log("Subiendo pasajeros...");
+            }
+            while(estado.fuel<245){
+              estado.fuel++;
+              console.log("Cargando combustible...");
+            }
+
+          }
+
+          console.log(pistas_d);
         },
 
 });

@@ -48,7 +48,7 @@ def main():
     except grpc.RpcError as e:
         print("Error raised: " + e.details())
     try:
-        response4 = stub.Dejar_air(pb.r_estado_avion(fuel=comb,psj=pasajeros))
+        response4 = stub.Dejar_air(pb.r_estado_avion(fuel=comb,psj=pasajeros,ip_a=id))
 
         # Catch any raised errors by grpc.
     except grpc.RpcError as e:
