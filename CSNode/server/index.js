@@ -144,6 +144,8 @@ server.addProtoService(proto.trafico_aereo.ServicioAereo.service, {
             }
 
           }
+          estado=call.request;
+          callback(null,50502);
 
           console.log(pistas_d);
         },
@@ -151,15 +153,6 @@ server.addProtoService(proto.trafico_aereo.ServicioAereo.service, {
 });
 
 
-
-/**var prop = rl.createInterface(process.stdin, process.stdout);
-
-prop.question('Cuantas Pistas son?', function(answer){
-
-  process.exit();
-  rl.close();
-});
-console.log(pistas);**/
 
 
 //Specify the IP and and port to start the grpc Server, no SSL in test environment

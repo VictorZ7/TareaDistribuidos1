@@ -50,9 +50,15 @@ def main():
     try:
         response4 = stub.Dejar_air(pb.r_estado_avion(fuel=comb,psj=pasajeros,ip_a=id))
 
+
         # Catch any raised errors by grpc.
     except grpc.RpcError as e:
             print("Error raised: " + e.details())
-
+    try:
+        channel = grpc.insecure_channel('localhost:'+str(response4.fuel))
+        print response4.fuel
+        stub = pb.ServicioAereoStub(channel)
+    except grpc.RpcError as e:
+        print("Error raised: " + e.details())
 if __name__ == '__main__':
     main()

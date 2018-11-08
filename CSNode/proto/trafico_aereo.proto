@@ -8,6 +8,7 @@ service ServicioAereo {
   rpc Aterrizaje (Request_Aterrizar) returns (Response_Aterrizar);
   rpc Despegue (Request_Despegar) returns (Response_Despegar);
   rpc Dejar_air (r_estado_avion) returns (estado_avion);
+  rpc Destiny (r_Request_Destino) returns (Request_Destino);
 }
 
 message Request {
@@ -46,4 +47,13 @@ message Request_Despegar {
 
 message Response_Despegar {
  int32 pos_d= 1;
+}
+
+message Request_Destino {
+  string ip_d= 1;
+
+}
+message r_Request_Destino {
+  string ip_d= 1;
+
 }
