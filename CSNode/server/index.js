@@ -9,6 +9,8 @@ var pistas_a = new Array(); // Pistas de Aterrizaje
 var pistas_d = new Array(); // Pistas de Despegue
 var queue_A = new Array(); // Prima de Aviones aterrizaje
 var queue_D = new Array(); //Cola de Despegues
+var arrivals = new Array();
+var departures = new Array();
 var ips_air = {}; // IPs de aviones
 var i=0;
 var name=0;
@@ -85,6 +87,7 @@ server.addProtoService(proto.trafico_aereo.ServicioAereo.service, {
           i++;
 
         }
+        //arrivals.push(ip_cliente);
         if(pos=== -1){
           if(!queue_A.includes(id_fly)){
           queue_A.push(id_fly);
@@ -128,6 +131,7 @@ server.addProtoService(proto.trafico_aereo.ServicioAereo.service, {
           estado = call.request;
           if ((estado.psj>=300 || estado.psj<=524) && (estado.fuel<245 || estado.fuel>190)){
             console.log("Avion saliendo de la pista de aterrizaje");
+            //departures.push(50502);
             console.log(estado.ip_a);
             pistas_d.splice(asignaciones_d[estado.ip_a],1,0);
 
