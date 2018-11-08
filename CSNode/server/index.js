@@ -55,7 +55,7 @@ const keys= Object.keys(ips_air);
 
 ip_server=keys[0];
 //define the callable methods that correspond to the methods defined in the protofile
-server.addProtoService(proto.trafico_aereo.ServicioAereo.service, {
+server.addService(proto.trafico_aereo.ServicioAereo.service, {
 
   IP(call, callback) {
         ip_cliente = call.request.ip_cliente;
